@@ -31,7 +31,7 @@ t1 = TestInput()
 
 t1.id = "simple"
 t1.data = {}
-t1.cfg_path = "./test_net_cfg/net_1.json"
+t1.cfg_path = "./tests/test_net_cfg/net_1.json"
 t1.expected_result = {
     'AAA_in_content': True,
     'BBB_in_content': True,

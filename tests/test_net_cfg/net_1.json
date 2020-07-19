@@ -13,7 +13,7 @@
   ],
   "layers": [
     [
-      "test_content@TextFileReader/path=./test_input_file/file_1.txt"
+      "test_content@TextFileReader/path=./tests/test_input_file/file_1.txt"
     ],
     [
       "BBB_in_content@ReInString/str_key=test_content;re=BBB",

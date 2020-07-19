@@ -1,7 +1,7 @@
 from setuptools import setup
 
 classifiers = [
-    'Development Status :: 5 - Production/Stable',
+    'Development Status :: 3 - Alpha',
     'Intended Audience :: Developers',
     'Programming Language :: Python :: 3.6',
     'Programming Language :: Python :: 3.7',
@@ -18,7 +18,7 @@ description = "Flexible Network"
 
 setup(
     name='flexet',
-    version='0.1',
+    version='0.2',
     packages=['flexet'],
     url='https://github.com/ShadowCodeCz/flexet',
     project_urls={
@@ -33,5 +33,10 @@ setup(
     classifiers=classifiers,
     keywords='flexible modular plugin network',
     license='GNU Affero General Public License v3 or later (AGPLv3+)',
-    install_requires=[]
+    install_requires=['generic-design-patterns', 'jsonmerge', 'yapsy'],
+    entry_points={
+        'console_scripts': [
+            'flexet=flexet:main',
+        ]
+    }
 )

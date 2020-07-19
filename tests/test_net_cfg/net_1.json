@@ -1,0 +1,31 @@
+{
+  "collectors": [
+    {
+      "type": "plugin.re",
+      "directories": ["./test_plugins"],
+      "templates": [".+.py$"]
+    },
+    {
+      "type": "pf.json",
+      "directories": ["./test_plugins", "test_pfs"],
+      "templates": [".+.pf.json"]
+    }
+  ],
+  "layers": [
+    [
+      "test_content@TextFileReader/path=./test_input_file/file_1.txt"
+    ],
+    [
+      "BBB_in_content@ReInString/str_key=test_content;re=BBB",
+      "AAA_in_content@ReInString/str_key=test_content;re=AAA",
+      "aaa_in_content@ReInString/str_key=test_content;re=aaa",
+      "zzz_in_content@ReInString/str_key=test_content;re=zzz",
+      "not_zzz_in_content@NotReInString/str_key=test_content;re=zzz",
+      "res_in_content@ResInString:res_parameters/str_key=test_content",
+      "not_res_in_content@NotResInString:res_parameters/str_key=test_content"
+    ],
+    [
+      "test_variable@sv:sv"
+    ]
+  ]
+}

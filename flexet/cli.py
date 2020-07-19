@@ -19,7 +19,7 @@ def generate_initial_cfg():
             {
                 "type": "plugin.re",
                 "directories": [],
-                "template": [".+\.py$"]
+                "template": [r".+\.py$"]
             },
             {
                 "type": "pf.json",

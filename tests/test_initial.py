@@ -18,7 +18,7 @@ import flexet
 # TODO: Error in node: raise exception
 
 
-class TestInput:
+class TI:
     def __init__(self):
         self.id = None
         self.data = None
@@ -27,11 +27,11 @@ class TestInput:
 
 
 tis = []
-t1 = TestInput()
+t1 = TI()
 
 t1.id = "simple"
 t1.data = {}
-t1.cfg_path = "net_1.json"
+t1.cfg_path = "./net_1.json"
 t1.expected_result = {
     'AAA_in_content': True,
     'BBB_in_content': True,

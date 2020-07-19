@@ -18,7 +18,7 @@ description = "Flexible Network"
 
 setup(
     name='flexet',
-    version='0.3',
+    version='0.3.1',
     packages=['flexet'],
     url='https://github.com/ShadowCodeCz/flexet',
     project_urls={

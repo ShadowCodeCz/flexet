@@ -2,18 +2,18 @@
   "collectors": [
     {
       "type": "plugin.re",
-      "directories": ["./test_plugins"],
+      "directories": ["./tests/test_plugins"],
       "templates": [".+.py$"]
     },
     {
       "type": "pf.json",
-      "directories": ["./test_plugins", "test_pfs"],
+      "directories": ["./tests/test_plugins", "./tests/test_pfs"],
       "templates": [".+.pf.json"]
     }
   ],
   "layers": [
     [
-      "test_content@TextFileReader/path=file_1.txt"
+      "test_content@TextFileReader/path=./tests/file_1.txt"
     ],
     [
       "BBB_in_content@ReInString/str_key=test_content;re=BBB",

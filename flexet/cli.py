@@ -28,7 +28,7 @@ def generate_initial_cfg():
             }
         ],
 
-        "layers": []
+        "layers": ["ALIAS@NODE-PLUGIN:PARAMETRIC-FILE/PARAMETER_1=VALUE;PARAMETER_2=VALUE"]
     }
 
     with open('net.flexet.json', 'w') as outfile:

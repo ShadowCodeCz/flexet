@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 classifiers = [
     'Development Status :: 3 - Alpha',
@@ -18,8 +18,8 @@ description = "Flexible Network"
 
 setup(
     name='flexet',
-    version='0.3.1',
-    packages=['flexet'],
+    version='0.3.2',
+    packages=find_packages(),
     url='https://github.com/ShadowCodeCz/flexet',
     project_urls={
         'Source': 'https://github.com/ShadowCodeCz/flexet',

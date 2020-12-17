@@ -1,5 +1,5 @@
 import re
-
+import glob
 
 import yapsy.IPlugin
 
@@ -85,3 +85,12 @@ class TextFileReader(DefaultNode):
     def _run(self, data, cfg):
         with open(cfg.parameters["path"]) as file:
             return {cfg.alias: file.read()}
+
+
+class FileLocator(DefaultNode):
+    names = ["FileLocator", "floc"]
+
+    def _run(self, data, cfg):
+        results = glob.glob(cfg.parameters["template"])
+        return {cfg.alias: results[0]}
+

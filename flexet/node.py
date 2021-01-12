@@ -1,3 +1,4 @@
+import os
 import re
 import glob
 
@@ -91,6 +92,18 @@ class FileLocator(DefaultNode):
     names = ["FileLocator", "floc"]
 
     def _run(self, data, cfg):
-        results = glob.glob(cfg.parameters["template"])
-        return {cfg.alias: results[0]}
+        wd = cfg.parameters["working_directory"]
+        template = cfg.parameters["template"]
 
+        if "recursive" in cfg.parameters:
+            recursive = True if cfg.parameters["recursive"] == "True" else False
+        else:
+            recursive = False
+
+        pattern = os.path.join(wd, template)
+
+        results = glob.glob(pattern, recursive=recursive)
+        try:
+            return {cfg.alias: results[0]}
+        except Exception as e:
+            return {cfg.alias: None}

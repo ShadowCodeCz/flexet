@@ -42,9 +42,12 @@ class ReInString(DefaultNode):
     names = ["ReInString", "re"]
 
     def _run(self, data, cfg):
-        pattern = re.compile(cfg.parameters["re"], re.MULTILINE)
-        s = data[cfg.parameters["str_key"]]
-        return {cfg.alias: True} if pattern.search(s) else {cfg.alias: False}
+        try:
+            pattern = re.compile(cfg.parameters["re"], re.MULTILINE)
+            s = data[cfg.parameters["str_key"]]
+            return {cfg.alias: True} if pattern.search(s) else {cfg.alias: False}
+        except Exception as e:
+            return {cfg.alias: False}
 
 
 class NotReInString(DefaultNode):
@@ -84,8 +87,11 @@ class TextFileReader(DefaultNode):
     names = ["TextFileReader", "tfr"]
 
     def _run(self, data, cfg):
-        with open(cfg.parameters["path"]) as file:
-            return {cfg.alias: file.read()}
+        try:
+            with open(cfg.parameters["path"]) as file:
+                return {cfg.alias: file.read()}
+        except Exception as e:
+            return {cfg.alias: None}
 
 
 class FileLocator(DefaultNode):
